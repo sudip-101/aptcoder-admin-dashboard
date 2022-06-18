@@ -1,0 +1,78 @@
+@import "../../variables";
+
+// input {
+//   padding: 8px 12px;
+// }
+
+.users-container {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .table-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // .top-bar-box {
+    //   width: 100%;
+    // }
+  }
+
+  .input_detail {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    color: $black-60;
+    outline: none;
+  }
+
+  .search-box {
+    display: flex;
+    .search-input {
+      border-radius: 4px 0 0 4px;
+      border-right: transparent;
+    }
+    .search-btn {
+      color: $black-60;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
+  // .filter-box {
+  //   position: relative;
+  //   .filter-placeholder {
+  //     width: max-content;
+  //     position: absolute;
+  //     top: 50%;
+  //     transform: translateY(-50%);
+  //   }
+  // }
+
+  .filter-box,
+  .sort-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .btn-clear {
+      border: none;
+      background: none;
+      color: $blue;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
+.ant-table-thead > tr > th {
+  background-color: $purple;
+  color: $light-white;
+}
+.ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+  width: 2px;
+  background: $light-white;
+}

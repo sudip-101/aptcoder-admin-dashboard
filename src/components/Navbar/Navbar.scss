@@ -1,0 +1,33 @@
+.nb {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  padding: 10px 16px 10px 30px;
+  justify-content: space-between;
+  align-items: center;
+  transition: left 300ms ease;
+  box-shadow: 0px 1px 12px -2px rgba(0, 0, 0, 0.25);
+
+  &.nb-moved {
+    left: 72px;
+  }
+
+  .nb_left {
+    .nb_left_page_title {
+      color: #101220;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nb_left_date {
+      color: #101220;
+      font-size: 0.8rem;
+      font-weight: bold;
+      opacity: 0.6;
+    }
+  }
+}
