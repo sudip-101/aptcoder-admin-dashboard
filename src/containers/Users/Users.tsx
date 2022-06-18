@@ -614,64 +614,66 @@ const Users: React.FC = () => {
   return (
     <section className="users-container">
       <Navbar title="Users" />
-      <div className="table-top-bar">
-        <form className="search-box top-bar-box" onSubmit={getSearch}>
-          <input
-            type="text"
-            className="input_detail search-input"
-            placeholder="Search"
-            required
-            value={search}
-            onChange={updateSearch}
-          />
-          <button type="submit" className="btn search-btn">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-        <div className="filter-box top-bar-box">
-          {/* <span className="filter-placeholder">Filter by user types</span> */}
-          <select
-            className="input_detail filter-input"
-            name="type"
-            id="type"
-            value={filter}
-            onChange={getFilter}
-          >
-            <option value="">filter by user types</option>
-            <option value="teacher">teacher</option>
-            <option value="student">student</option>
-            <option value="admin">admin</option>
-          </select>
-          <div>
-            <button className="btn-clear" onClick={() => setFilter("")}>
-              Clear Filter
+      <div className="users-table-container">
+        <div className="table-top-bar">
+          <form className="search-box top-bar-box" onSubmit={getSearch}>
+            <input
+              type="text"
+              className="input_detail search-input"
+              placeholder="Search"
+              required
+              value={search}
+              onChange={updateSearch}
+            />
+            <button type="submit" className="btn search-btn">
+              <i className="fa-solid fa-magnifying-glass"></i>
             </button>
+          </form>
+          <div className="filter-box top-bar-box">
+            {/* <span className="filter-placeholder">Filter by user types</span> */}
+            <select
+              className="input_detail filter-input"
+              name="type"
+              id="type"
+              value={filter}
+              onChange={getFilter}
+            >
+              <option value="">filter by user types</option>
+              <option value="teacher">teacher</option>
+              <option value="student">student</option>
+              <option value="admin">admin</option>
+            </select>
+            <div>
+              <button className="btn-clear" onClick={() => setFilter("")}>
+                Clear Filter
+              </button>
+            </div>
+          </div>
+          <div className="sort-box top-bar-box">
+            <select
+              className="input_detail sort-input"
+              name="type"
+              id="type"
+              value={sort}
+              onChange={getSort}
+            >
+              <option value="">sort by</option>
+              <option value="name">name</option>
+              <option value="roll">roll</option>
+            </select>
+            <div>
+              <button className="btn-clear" onClick={() => setSort("")}>
+                Clear Sort
+              </button>
+            </div>
           </div>
         </div>
-        <div className="sort-box top-bar-box">
-          <select
-            className="input_detail sort-input"
-            name="type"
-            id="type"
-            value={sort}
-            onChange={getSort}
-          >
-            <option value="">sort by</option>
-            <option value="name">name</option>
-            <option value="roll">roll</option>
-          </select>
-          <div>
-            <button className="btn-clear" onClick={() => setSort("")}>
-              Clear Sort
-            </button>
-          </div>
-        </div>
+        <Table
+          dataSource={filter === "" || sort === "" ? dataSource : dataState}
+          columns={columns}
+          className="users-table"
+        />
       </div>
-      <Table
-        dataSource={filter === "" || sort === "" ? dataSource : dataState}
-        columns={columns}
-        className="users-table"
-      />
     </section>
   );
 };

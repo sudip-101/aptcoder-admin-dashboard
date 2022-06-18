@@ -24,12 +24,14 @@ const Sidebar: React.FC<IContentMovedProps> = ({
     }
   };
   return (
-    <div className={sidebarOpen ? "sidebar" : "sidebar closed"}>
+    <div className={sidebarOpen ? "sidebar opened" : "sidebar closed"}>
       <div className="top">
         <div className="top-bar">
           <h2 className="logo none-text">APTCODER</h2>
           <div
-            className="menu-toggle"
+            className={
+              sidebarOpen ? "menu-toggle menu-toggle-light" : "menu-toggle"
+            }
             onClick={() => {
               setSidebarOpen(!sidebarOpen);
               setContentMoved(sidebarOpen);

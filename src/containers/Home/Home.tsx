@@ -57,36 +57,36 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="chart-boxes">
-          <div className="chart-card">
+          <div className="chart-card chart-card-graph">
             <Chart
               options={LineChart.options}
               series={LineChart.series}
               type="bar"
-              width="500"
+              className="chart"
             />
           </div>
-          <div className="chart-card">
+          <div className="chart-card chart-card-circle">
             <Chart
               options={PieChart.options}
               series={PieChart.series}
               type="donut"
-              width="380"
+              className="chart"
             />
           </div>
-          <div className="chart-card">
+          <div className="chart-card chart-card-graph">
             <Chart
               options={LineChart.options}
               series={LineChart.series}
               type="line"
-              width="500"
+              className="chart"
             />
           </div>
-          <div className="chart-card">
+          <div className="chart-card chart-card-circle">
             <Chart
               options={PieChart.options}
               series={PieChart.series}
               type="pie"
-              width="380"
+              className="chart"
             />
           </div>
         </div>

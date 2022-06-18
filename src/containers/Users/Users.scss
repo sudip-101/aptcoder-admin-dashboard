@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    margin-bottom: 24px;
     // display: grid;
     // grid-template-columns: repeat(3, 1fr);
     // .top-bar-box {
@@ -75,4 +76,26 @@
   > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
   width: 2px;
   background: $light-white;
+}
+
+@media only screen and (max-width: 1100px) {
+  .users-container {
+    .table-top-bar {
+      flex-direction: column;
+      width: 100%;
+    }
+    .top-bar-box {
+      width: 100%;
+    }
+    .input_detail {
+      width: 100%;
+    }
+    .users-table-container {
+      overflow-x: hidden;
+      .ant-table {
+        width: 100%;
+        overflow-x: scroll;
+      }
+    }
+  }
 }

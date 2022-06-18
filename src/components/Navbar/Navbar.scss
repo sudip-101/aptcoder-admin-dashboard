@@ -31,3 +31,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .nb,
+  .nb.nb-moved {
+    left: 0;
+  }
+}

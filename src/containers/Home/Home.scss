@@ -64,3 +64,27 @@
   align-items: center;
   box-shadow: 1px 1px 12px -2px rgba(0, 0, 0, 0.25);
 }
+
+.chart-card-graph {
+  .chart {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.chart-card-circle {
+  .chart {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .chart-boxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .chart-card {
+    width: 100%;
+  }
+}

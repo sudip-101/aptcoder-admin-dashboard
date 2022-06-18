@@ -14,3 +14,14 @@
   left: 72px;
   width: calc(100% - 72px);
 }
+
+@media only screen and (max-width: 600px) {
+  .contents {
+    width: 100%;
+    left: 0;
+  }
+  .contents.moved {
+    width: 100%;
+    left: 0;
+  }
+}

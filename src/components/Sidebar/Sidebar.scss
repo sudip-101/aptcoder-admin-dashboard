@@ -166,3 +166,26 @@ h6 {
     margin-left: 5px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .menu-toggle {
+    position: fixed;
+    z-index: 1000;
+    top: 28px;
+    right: 16px;
+    .menu-toggle-bar {
+      background-color: $dark;
+    }
+  }
+  .menu-toggle-light {
+    .menu-toggle-bar {
+      background-color: $white;
+    }
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .sidebar.closed {
+    width: 0;
+  }
+}

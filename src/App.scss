@@ -1,3 +1,5 @@
+@import "./variables";
+
 *,
 *::before,
 *::after {
@@ -5,6 +7,19 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(201, 201, 201);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $purple;
+  border-radius: 6px;
 }
 
 .btn {
