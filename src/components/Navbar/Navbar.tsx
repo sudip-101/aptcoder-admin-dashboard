@@ -10,7 +10,7 @@ type navProps = {
 const Navbar = React.memo((props: navProps) => {
   const [navMoved, setNavMoved] = useContext(ContentMovedContext);
   return (
-    <div className={navMoved ? "nb nb-moved" : "nb"}>
+    <div className={!navMoved ? "nb nb-moved" : "nb"}>
       <div className="nb_left">
         <div className="nb_left_page_title">{props.title}</div>
         <div className="nb_left_date">Today {moment().format("ll")}</div>

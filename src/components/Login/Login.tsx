@@ -5,9 +5,16 @@ import "./Login.scss";
 const Login: React.FC<ILoginProps> = ({ loggedIn, setLoggedIn }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const validateEmail = (email: string) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const login = userLogin({ email: email, password: password });
+    if (!validateEmail(email)) alert("Invalid e-mail address");
+    if (password.length < 8) alert("Password must contain 8 characters");
     login
       .then((response: any) => {
         console.log(response.result);

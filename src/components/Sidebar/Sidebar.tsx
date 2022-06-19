@@ -24,13 +24,13 @@ const Sidebar: React.FC<IContentMovedProps> = ({
     }
   };
   return (
-    <div className={sidebarOpen ? "sidebar opened" : "sidebar closed"}>
+    <div className={!sidebarOpen ? "sidebar opened" : "sidebar closed"}>
       <div className="top">
         <div className="top-bar">
           <h2 className="logo none-text">APTCODER</h2>
           <div
             className={
-              sidebarOpen ? "menu-toggle menu-toggle-light" : "menu-toggle"
+              !sidebarOpen ? "menu-toggle menu-toggle-light" : "menu-toggle"
             }
             onClick={() => {
               setSidebarOpen(!sidebarOpen);
@@ -55,7 +55,14 @@ const Sidebar: React.FC<IContentMovedProps> = ({
                   {route.children.map((child) => (
                     <Menu.Item key={child.key}>
                       {child.link ? (
-                        <Link to={child.link} className="menu-link">
+                        <Link
+                          to={child.link}
+                          className="menu-link"
+                          onClick={() => {
+                            if (sidebarOpen) setSidebarOpen(false);
+                            if (sidebarOpen) setContentMoved(true);
+                          }}
+                        >
                           {child.title}
                         </Link>
                       ) : (
@@ -67,7 +74,14 @@ const Sidebar: React.FC<IContentMovedProps> = ({
               ) : (
                 <Menu.Item key={route.key} icon={route.icon}>
                   {route.link ? (
-                    <Link to={route.link} className="menu-link">
+                    <Link
+                      to={route.link}
+                      className="menu-link"
+                      onClick={() => {
+                        if (sidebarOpen) setSidebarOpen(false);
+                        if (sidebarOpen) setContentMoved(true);
+                      }}
+                    >
                       {route.title}
                     </Link>
                   ) : (

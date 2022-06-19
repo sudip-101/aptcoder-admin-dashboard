@@ -175,15 +175,37 @@ h6 {
     right: 16px;
     .menu-toggle-bar {
       background-color: $dark;
+      transition: transform 250ms ease, background-color 250ms ease;
+    }
+    .two {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
   .menu-toggle-light {
+    align-items: center;
     .menu-toggle-bar {
       background-color: $white;
+    }
+    .two {
+      transform: scaleX(0);
+    }
+    .one,
+    .three {
+      width: 24px;
+    }
+    .one {
+      transform: rotate(45deg) translateY(12px);
+    }
+    .three {
+      transform: rotate(-45deg) translateY(-11px);
     }
   }
   .sidebar {
     width: 100%;
+    .logo {
+      padding: 8px 0;
+    }
   }
   .sidebar.closed {
     width: 0;

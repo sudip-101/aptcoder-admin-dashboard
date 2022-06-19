@@ -18,7 +18,7 @@ const Layout: React.FC = () => {
               contentMoved={contentMoved}
               setContentMoved={(moved: boolean) => setContentMoved(moved)}
             />
-            <div className={contentMoved ? "contents moved" : "contents"}>
+            <div className={!contentMoved ? "contents moved" : "contents"}>
               <Outlet />
             </div>
           </ContentMovedContext.Provider>
